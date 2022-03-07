@@ -1,0 +1,23 @@
+{
+    "name": "@krakerxyz/eslint-config",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "eslint",
+        "eslintconfig"
+    ],
+    "author": "Josh Kraker",
+    "license": "MIT",
+    "dependencies": {
+        "@typescript-eslint/eslint-plugin": "^5",
+        "@typescript-eslint/parser": "^5",
+        "eslint-plugin-vue": "^8"
+    },
+    "peerDependencies": {
+        "eslint": "^8"
+    }
+}
