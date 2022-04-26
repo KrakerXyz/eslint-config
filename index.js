@@ -172,8 +172,9 @@ module.exports = {
             'error'
         ],
 
-        'indent': [
-            //Turning off because I'm not sure how to get it to require initial indent in vue scripts
+        //Using indent in TS can cause issues like "TypeError: Cannot read properties of undefined (reading 'loc')"
+        'indent': 'off',
+        '@typescript-eslint/indent': [
             'error',
             4
         ],
