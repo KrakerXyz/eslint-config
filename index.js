@@ -131,6 +131,11 @@ module.exports = {
             'always'
         ],
 
+        'vue/html-indent': [
+            'error',
+            4
+        ],
+
         '@typescript-eslint/explicit-module-boundary-types': [
             //https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/explicit-module-boundary-types.md
             'off'
@@ -153,6 +158,11 @@ module.exports = {
             'off'
         ],
 
+        '@typescript-eslint/indent': [
+            'error',
+            4
+        ],
+
         'object-curly-spacing': [
             'error',
             'always'
@@ -172,12 +182,8 @@ module.exports = {
             'error'
         ],
 
-        //Using indent in TS can cause issues like "TypeError: Cannot read properties of undefined (reading 'loc')"
+        //Using indent in TS can cause issues like "TypeError: Cannot read properties of undefined (reading 'loc')". We turn this off and use the @typescript one instead
         'indent': 'off',
-        '@typescript-eslint/indent': [
-            'error',
-            4
-        ],
 
         'max-depth': [
             'error',
