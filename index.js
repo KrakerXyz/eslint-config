@@ -185,10 +185,11 @@ module.exports = {
         //Using indent in TS can cause issues like "TypeError: Cannot read properties of undefined (reading 'loc')". We turn this off and use the @typescript one instead
         'indent': 'off',
 
-        'max-depth': [
-            'error',
-            3
-        ],
+        // Gets in the way too often.
+        // 'max-depth': [
+        //     'error',
+        //     3
+        // ],
 
         'quotes': [
             'error',
