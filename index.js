@@ -158,7 +158,7 @@ module.exports = {
             'off'
         ],
 
-        '@typescript-eslint/no-empty-functions': [
+        '@typescript-eslint/no-empty-function': [
             // throws an error if we have foo() {} but this is more annoying than helpful
             'off'
         ],
