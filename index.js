@@ -158,6 +158,11 @@ module.exports = {
             'off'
         ],
 
+        '@typescript-eslint/no-empty-functions': [
+            // throws an error if we have foo() {} but this is more annoying than helpful
+            'off'
+        ],
+
         '@typescript-eslint/indent': [
             'error',
             4
@@ -177,10 +182,11 @@ module.exports = {
             }
         ],
 
-        'complexity': [
-            //https://eslint.org/docs/rules/complexity
-            'error'
-        ],
+        // This is just too annoying
+        // 'complexity': [
+        //     //https://eslint.org/docs/rules/complexity
+        //     'error'
+        // ],
 
         //Using indent in TS can cause issues like "TypeError: Cannot read properties of undefined (reading 'loc')". We turn this off and use the @typescript one instead
         'indent': 'off',
