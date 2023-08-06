@@ -1,6 +1,6 @@
 {
     "name": "@krakerxyz/eslint-config",
-    "version": "1.4.2",
+    "version": "1.6.0",
     "description": "",
     "main": "index.js",
     "scripts": {
@@ -17,8 +17,8 @@
     "author": "Josh Kraker",
     "license": "MIT",
     "dependencies": {
-        "@typescript-eslint/eslint-plugin": "^5",
-        "@typescript-eslint/parser": "^5",
+        "@typescript-eslint/eslint-plugin": "^6",
+        "@typescript-eslint/parser": "^6",
         "eslint-plugin-vue": "^9"
     },
     "peerDependencies": {
