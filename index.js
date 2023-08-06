@@ -6,8 +6,8 @@ module.exports = {
     },
     'extends': [
         'eslint:recommended',
-        'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
+        'plugin:@typescript-eslint/stylistic',
         'plugin:vue/vue3-strongly-recommended'
     ],
     'globals': {
@@ -17,7 +17,7 @@ module.exports = {
         'require': 'readonly'
     },
     'parserOptions': {
-        'ecmaVersion': 2021,
+        'ecmaVersion': 'latest',
         'parser': '@typescript-eslint/parser',
         'sourceType': 'module'
     },
@@ -25,7 +25,7 @@ module.exports = {
         'vue',
         '@typescript-eslint'
     ],
-
+    'root': true,
     'rules': {
 
         'vue/html-button-has-type': [
@@ -166,6 +166,18 @@ module.exports = {
         '@typescript-eslint/indent': [
             'error',
             4
+        ],
+        
+        '@typescript-eslint/member-delimiter-style': [
+            'error',
+            {
+                'multiline': {
+                    'delimiter': 'comma'
+                },
+                'singleline': {
+                    'delimiter': 'comma'
+                }
+            }
         ],
 
         'object-curly-spacing': [
