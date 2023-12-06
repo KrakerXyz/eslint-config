@@ -136,6 +136,23 @@ module.exports = {
             4
         ],
 
+        '@typescript-eslint/explicit-function-return-type': [
+            'error',
+            {
+                "allowExpressions": true // don't require return time for expressions which are usually used as inline functions
+            }
+        ],
+
+        '@typescript-eslint/prefer-for-of': [
+            // requires for (const item of items) instead of for (let i = 0; i < items.length; i++) when not using index
+            'off'
+        ],
+
+        '@typescript-eslint/consistent-generic-constructors': [
+            // required const t: Map<string, string> = new Map<string, string>(); instead of just = new Map();
+            'off'
+        ],
+
         '@typescript-eslint/explicit-module-boundary-types': [
             //https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/explicit-module-boundary-types.md
             'off'
@@ -167,7 +184,7 @@ module.exports = {
             'error',
             4
         ],
-        
+
         '@typescript-eslint/member-delimiter-style': [
             'error',
             {
