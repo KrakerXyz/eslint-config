@@ -139,7 +139,8 @@ module.exports = {
         '@typescript-eslint/explicit-function-return-type': [
             'error',
             {
-                "allowExpressions": true // don't require return time for expressions which are usually used as inline functions
+                "allowExpressions": true, // don't require return time for expressions which are usually used as inline functions
+                "allowTypedFunctionExpressions": true // don't require return type arrow functions being assigned to a variable
             }
         ],
 
