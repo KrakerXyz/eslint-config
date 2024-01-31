@@ -8,7 +8,8 @@ module.exports = {
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/stylistic',
-        'plugin:vue/vue3-strongly-recommended'
+        'plugin:vue/vue3-strongly-recommended',
+        'plugin:css/recommended'
     ],
     'globals': {
         'Atomics': 'readonly',
@@ -23,7 +24,8 @@ module.exports = {
     },
     'plugins': [
         'vue',
-        '@typescript-eslint'
+        '@typescript-eslint',
+        'css'
     ],
     'root': true,
     'rules': {
