@@ -25,6 +25,7 @@ module.exports = {
     'plugins': [
         'vue',
         '@typescript-eslint',
+        '@stylistic/eslint-plugin',
         'css'
     ],
     'root': true,
@@ -229,9 +230,10 @@ module.exports = {
         //     3
         // ],
 
-        'quotes': [
+        '@stylistic/quotes': [
             'error',
-            'single'
+            'single',
+            { 'avoidEscape': true }
         ],
 
         'semi': [
