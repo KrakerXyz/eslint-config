@@ -139,6 +139,21 @@ module.exports = {
             4
         ],
 
+        
+        '@typescript-eslint/consistent-type-imports': [
+            // Requires that imported things are properly marked as "type" when they're only used for typing
+            'error',
+            {
+                prefer: 'type-imports',
+                disallowTypeAnnotations: true,
+                fixStyle: 'inline-type-imports' // adds the "type" to the import statement
+            }
+        ],
+        '@typescript-eslint/no-import-type-side-effects': [
+            // If the only thing we're doing an import for is types, may sure the "type" is specified outside the {} so that the whole import gets dropped from build (no side effects)
+            'error'
+        ],
+
         '@typescript-eslint/explicit-function-return-type': [
             'error',
             {
