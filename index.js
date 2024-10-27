@@ -139,7 +139,7 @@ module.exports = {
             4
         ],
 
-        
+
         '@typescript-eslint/consistent-type-imports': [
             // Requires that imported things are properly marked as "type" when they're only used for typing
             'error',
@@ -154,13 +154,14 @@ module.exports = {
             'error'
         ],
 
-        '@typescript-eslint/explicit-function-return-type': [
-            'error',
-            {
-                "allowExpressions": true, // don't require return time for expressions which are usually used as inline functions
-                "allowTypedFunctionExpressions": true // don't require return type arrow functions being assigned to a variable
-            }
-        ],
+        // This one is just too annoying. If I could find a way to disable it for arrow functions, I would use it
+        // '@typescript-eslint/explicit-function-return-type': [
+        //     'error',
+        //     {
+        //         "allowExpressions": true, // don't require return type for expressions which are usually used as inline functions as parameters
+        //         "allowTypedFunctionExpressions": true // don't require return type arrow functions being assigned to a variable
+        //     }
+        // ],
 
         '@typescript-eslint/prefer-for-of': [
             // requires for (const item of items) instead of for (let i = 0; i < items.length; i++) when not using index
