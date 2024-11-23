@@ -6,8 +6,8 @@ import pluginVue from "eslint-plugin-vue";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
+    { ignores: ["**/node_modules/", "**/dist/", '.git/'] },
     {
-        ignores: ["**/node_modules/", "**/dist/", '.git/'],
         files: ["**/*.{js,mjs,cjs,ts,vue}"],
         languageOptions: {
             parserOptions: {
