@@ -40,6 +40,15 @@ export default [
                 // required const t: Map<string, string> = new Map<string, string>(); instead of just = new Map();
                 'off'
             ],
+            '@typescript-eslint/consistent-type-imports': [
+                // Requires that imported things are properly marked as "type" when they're only used for typing
+                'error',
+                {
+                    prefer: 'type-imports',
+                    disallowTypeAnnotations: true,
+                    fixStyle: 'inline-type-imports' // adds the "type" to the import statement
+                }
+            ],
             'vue/html-indent': [
                 'error',
                 4
@@ -57,6 +66,13 @@ export default [
             }],
             'vue/multi-word-component-names': [
                 'off'
+            ],
+            'singleline-html-element-content-newline': [
+                'error',
+                {
+                    // Added option
+                    'externalIgnores': ['option']
+                }
             ]
         }
     }
