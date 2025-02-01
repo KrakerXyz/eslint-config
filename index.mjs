@@ -2,6 +2,7 @@ import globals from "globals";
 import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
 import pluginVue from "eslint-plugin-vue";
+import stylisticTs from '@stylistic/eslint-plugin-ts'
 
 
 /** @type {import('eslint').Linter.Config[]} */
@@ -9,6 +10,9 @@ export default [
     { ignores: ["**/node_modules/", "**/dist/", '.git/'] },
     {
         files: ["**/*.{js,mjs,cjs,ts,vue}"],
+        plugins: {
+            '@stylistic/ts': stylisticTs
+        },
         languageOptions: {
             parserOptions: {
                 parser: tseslint.parser
@@ -29,6 +33,20 @@ export default [
                     SwitchCase: 1
                 }
             ],
+
+            '@stylistic/ts/member-delimiter-style': [
+                // use comma for things like interface member delimiters
+                'error',
+                {
+                    'multiline': {
+                        'delimiter': 'comma'
+                    },
+                    'singleline': {
+                        'delimiter': 'comma'
+                    }
+                }
+            ],
+
             '@typescript-eslint/no-explicit-any': 'off',
             '@typescript-eslint/no-inferrable-types': 'off',
             // requires for (const item of items) instead of for (let i = 0; i < items.length; i++) when not using index
@@ -47,19 +65,6 @@ export default [
                     prefer: 'type-imports',
                     disallowTypeAnnotations: true,
                     fixStyle: 'inline-type-imports' // adds the "type" to the import statement
-                }
-            ],
-
-            '@typescript-eslint/member-delimiter-style': [
-                // use comma for things like interface member delimiters
-                'error',
-                {
-                    'multiline': {
-                        'delimiter': 'comma'
-                    },
-                    'singleline': {
-                        'delimiter': 'comma'
-                    }
                 }
             ],
 
