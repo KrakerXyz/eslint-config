@@ -49,6 +49,20 @@ export default [
                     fixStyle: 'inline-type-imports' // adds the "type" to the import statement
                 }
             ],
+
+            '@typescript-eslint/member-delimiter-style': [
+                // use comma for things like interface member delimiters
+                'error',
+                {
+                    'multiline': {
+                        'delimiter': 'comma'
+                    },
+                    'singleline': {
+                        'delimiter': 'comma'
+                    }
+                }
+            ],
+
             'vue/html-indent': [
                 'error',
                 4
@@ -67,7 +81,7 @@ export default [
             'vue/multi-word-component-names': [
                 'off'
             ],
-            'singleline-html-element-content-newline': [
+            'vue/singleline-html-element-content-newline': [
                 'error',
                 {
                     // Added option
