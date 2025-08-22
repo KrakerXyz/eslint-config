@@ -2,7 +2,7 @@ import globals from "globals";
 import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
 import pluginVue from "eslint-plugin-vue";
-import stylisticTs from '@stylistic/eslint-plugin-ts'
+import stylistic from '@stylistic/eslint-plugin'
 
 
 /** @type {import('eslint').Linter.Config[]} */
@@ -11,7 +11,7 @@ export default [
     {
         files: ["**/*.{js,mjs,cjs,ts,vue}"],
         plugins: {
-            '@stylistic/ts': stylisticTs
+            '@stylistic': stylistic
         },
         languageOptions: {
             parserOptions: {
@@ -34,7 +34,7 @@ export default [
                 }
             ],
 
-            '@stylistic/ts/member-delimiter-style': [
+            '@stylistic/member-delimiter-style': [
                 // use comma for things like interface member delimiters
                 'error',
                 {
