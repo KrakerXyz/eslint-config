@@ -70,6 +70,7 @@ export default [
 
             // --- Stylistic Rules (with corrected names) ---
             '@stylistic/indent': ['error', 4, { SwitchCase: 1 }],
+            '@stylistic/quotes': ['error', 'single', { avoidEscape: true }],
             '@stylistic/member-delimiter-style': [
                 // use comma for things like interface member delimiters
                 'error',
