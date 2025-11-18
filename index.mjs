@@ -71,6 +71,7 @@ export default [
                     fixStyle: 'inline-type-imports' // adds the "type" to the import statement
                 }
             ],
+            '@typescript-eslint/comma-spacing': ['error', { before: false, after: true }],
 
             // --- Vue Rules ---
             'vue/html-indent': ['error', 4],
