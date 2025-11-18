@@ -16,7 +16,7 @@ export default [
 
     // 3. Your custom configuration, overrides, and stylistic rules
     {
-        files: ["**/*.{js,mjs,cjs,ts,vue}"],
+        files: ["**/*.{js,mjs,cjs,ts,vue,tsx}"],
 
         // Register the stylistic plugin under a single alias.
         // It will automatically apply the correct rules for JS/TS files.
@@ -39,6 +39,22 @@ export default [
             '@typescript-eslint/no-inferrable-types': 'off',
             // requires for (const item of items) instead of for (let i = 0; i < items.length; i++) when not using index
             '@typescript-eslint/prefer-for-of': 'off',
+            '@typescript-eslint/no-floating-promises': [
+                // Requires promises to be handled (await, .then, .catch, void, or assigned)
+                'error',
+                {
+                    ignoreVoid: true, // allows void myPromise() to explicitly ignore
+                    ignoreIIFE: false
+                }
+            ],
+            '@typescript-eslint/no-misused-promises': [
+                // Prevents promises in places they shouldn't be (like if conditions)
+                'error',
+                {
+                    checksConditionals: true,
+                    checksVoidReturn: false // allows async functions in event handlers
+                }
+            ],
             '@typescript-eslint/no-unused-vars': [
                 'error', { varsIgnorePattern: '^_', argsIgnorePattern: '^_', ignoreRestSiblings: true }
             ],
