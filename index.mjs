@@ -71,7 +71,8 @@ export default [
                     fixStyle: 'inline-type-imports' // adds the "type" to the import statement
                 }
             ],
-            '@typescript-eslint/comma-spacing': ['error', { before: false, after: true }],
+            // Use the core comma-spacing rule; works in TS and avoids missing plugin rule errors
+            'comma-spacing': ['error', { before: false, after: true }],
 
             // --- Vue Rules ---
             'vue/html-indent': ['error', 4],
@@ -83,6 +84,9 @@ export default [
             'vue/multi-word-component-names': 'off',
             'vue/singleline-html-element-content-newline': ['error', {
                 'externalIgnores': ['option']
+            }],
+            'vue/component-name-in-template-casing': ['error', 'PascalCase', {
+                registeredComponentsOnly: false
             }],
 
             // --- Stylistic Rules (with corrected names) ---
