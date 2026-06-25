@@ -3,20 +3,42 @@ import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
 import pluginVue from "eslint-plugin-vue";
 import stylistic from '@stylistic/eslint-plugin';
+import reactHooks from 'eslint-plugin-react-hooks';
+import importX from 'eslint-plugin-import-x';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
     // 1. Global ignores
-    { ignores: ["**/node_modules/", "**/dist/", '.git/'] },
+    { ignores: ["**/node_modules/", "**/dist/", '.git/', '**/.expo/'] },
 
     // 2. Base recommended configurations
     pluginJs.configs.recommended,
     ...tseslint.configs.recommended,
     ...pluginVue.configs["flat/strongly-recommended"],
 
-    // 3. Your custom configuration, overrides, and stylistic rules
+    // 3. React / React Native — scoped to JSX/TSX so it never touches Vue/server files.
+    //    Only the classic, framework-agnostic correctness rules: rules-of-hooks (catches a
+    //    hook called inside a loop/condition/callback) + exhaustive-deps. NOT the aggressive
+    //    React-Compiler set (recommended-latest), and NOT eslint-plugin-react (its version
+    //    detection calls the removed context.getFilename() and crashes on ESLint 10).
+    //    import-x adds resolver-free import hygiene; module resolution is left to TypeScript.
     {
-        files: ["**/*.{js,mjs,cjs,ts,vue,tsx}"],
+        files: ['**/*.{jsx,tsx}'],
+        plugins: {
+            'react-hooks': reactHooks,
+            'import-x': importX
+        },
+        rules: {
+            'react-hooks/rules-of-hooks': 'error',
+            'react-hooks/exhaustive-deps': 'warn',
+            'import-x/no-duplicates': 'warn',
+            'import-x/export': 'error'
+        }
+    },
+
+    // 4. Your custom configuration, overrides, and stylistic rules
+    {
+        files: ["**/*.{js,mjs,cjs,ts,tsx,jsx,vue}"],
 
         // Register the stylistic plugin under a single alias.
         // It will automatically apply the correct rules for JS/TS files.
